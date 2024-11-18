@@ -1,0 +1,261 @@
+/* Estilos generales */
+body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    padding-top: 36px;
+}
+.na
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #e2e2e2 !important;
+}
+
+/* Ajuste de márgenes */
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+
+}
+
+
+
+/* Estilos para el panel izquierdo: lista de contactos */
+.chat-list-panel {
+    height: 84vh; /* Ajusta el panel de contactos para que ocupe toda la altura de la ventana */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+    background-color: #f8f9fa; /* Fondo claro para el panel */
+    border-right: 1px solid #ddd; /* Borde derecho para separar los paneles */
+    padding: 10px;
+    width: 20%;
+    top: 86px;
+    position: fixed;
+    margin-top: 15px;
+
+}
+
+.contact-list {
+    padding: 0 10px;
+}
+
+.contact-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact-item:hover {
+    background-color: #f8f8f8;
+}
+
+.contact-name {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Estilos para el panel derecho: cuadro de chat */
+.chat-box-panel {
+    position: fixed; /* Fija el cuadro de chat */
+    top: 56px; /* Ajusta el valor para que no se superponga al navbar */
+    bottom: 0;
+    right: 0;
+    width: 61.5%; /* Ajusta el ancho según lo necesites */
+    overflow-y: hidden; /* Evita el desplazamiento vertical externo */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-header {
+    background-color: #e6eff0;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto; /* Permite el desplazamiento solo en el área de mensajes */
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+}
+
+.chat-input {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f0f2f5;
+    display: flex;
+    gap: 5px;
+    position: sticky;
+    bottom: 0;
+    z-index: 10; 
+}
+
+.chat-input input {
+    flex: 1;
+}
+
+.notification-badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: white;
+    min-width: 20px;
+    text-align: center;
+}
+
+.contact-icon {
+    font-size: 28px; /* Ajusta el tamaño del icono */
+    color: #cfd6db; /* Cambia el color del icono si lo deseas */
+}
+
+.message-user {
+    background-color: #bee5eb;
+    text-align: right;
+    float: right;
+    clear: both;
+    padding: 10px;
+    border-radius: 15px 15px 0 15px;
+    margin: 5px 0;
+    max-width: 70%;
+}
+.message-sender {
+    background-color: #d1e7dd;
+    text-align: left;
+    float: left;
+    clear: both;
+    padding: 10px;
+    border-radius: 15px 15px 15px 0;
+    margin: 5px 0;
+    max-width: 70%;
+}
+
+.mensaje-select {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%; /* Limita el ancho del mensaje */
+    padding: 40px 20px;
+    color: #4a4a4a;
+    font-size: 1.5em;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: absolute; /* Cambia a posición absoluta */
+    right: 0; /* Posiciona el div pegado a la derecha */
+    top: 84.5; /* Puedes ajustar esto para controlar la altura */
+     /* Ajusta la altura según sea necesario */
+    margin-left: 0; /* Elimina el margen izquierdo */
+    height: 84.5%;
+    bottom: 0;
+}
+
+.select-contact-message p{
+    margin-left: 40px;
+}
+
+.select-contact-message::before {
+    content: "\f007"; /* Icono de usuario */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 3em;
+    color: #cfd8dc;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+.chat-list-panel-group{
+    height: 84vh; /* Ajusta el panel de contactos para que ocupe toda la altura de la ventana */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+    background-color: #f8f9fa; /* Fondo claro para el panel */
+    border-right: 1px solid #ddd; /* Borde derecho para separar los paneles */
+    padding: 10px;
+    width: 20%;
+    top: 86px;
+    position: fixed;
+    margin-left: 20%;
+    margin-top: 15px;
+}
+
+.titulo-char-grupo{
+    position: fixed;
+    margin-left: 20%;
+}
+
+#btn-crear-grupo{
+    position: fixed;
+    margin-left: 30%;
+    max-width: 115px;
+    height: 35px;
+}
+
+.group-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.search-bar {
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    color: #888;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+}
+
+.search-bar-group {
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon-group {
+    color: #888;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+#search-group-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+}
