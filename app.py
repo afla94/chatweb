@@ -7,11 +7,10 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-app.config['MYSQL_HOST'] = 'mysql.railway.internal'  
-app.config['MYSQL_USER'] = 'root'  
-app.config['MYSQL_PASSWORD'] = 'dyCsJdcbUhHerxBTbpkIZBhYWeXXORGc'  
-app.config['MYSQL_DB'] = 'railway' 
-
+app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST')  # mysql.railway.internal
+app.config['MYSQL_USER'] = os.getenv('MYSQLUSER')  # root
+app.config['MYSQL_PASSWORD'] = os.getenv('MYSQLPASSWORD')  # dyCsJdcbUhHerxBTbpkIZBhYWeXXORGc
+app.config['MYSQL_DB'] = os.getenv('MYSQLDATABASE')  # railway
 
 mysql = MySQL(app)
 socketio = SocketIO(app, cors_allowed_origins="*", ping_timeout=10, ping_interval=5)
@@ -497,6 +496,7 @@ def get_messages():
     return {'messages': message_list}
 
 if __name__ == '__main__':
+    socketio = SocketIO(app, cors_allowed_origins="*", ping_timeout=10, ping_interval=5)
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
     port = int(os.environ.get('PORT', 5000))  # Obtén el puerto de las variables de entorno
     socketio.run(app, host="0.0.0.0", port=port, debug=False)
