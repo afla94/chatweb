@@ -7,10 +7,10 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-app.config['MYSQL_HOST'] = os.getenv('DB_HOST', 'mysql.railway.internal')  
-app.config['MYSQL_USER'] = os.getenv('DB_USER', 'root')  
-app.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD', 'dyCsJdcbUhHerxBTbpkIZBhYWeXXORGc')  
-app.config['MYSQL_DB'] = os.getenv('DB_NAME', 'railway') 
+app.config['MYSQL_HOST'] = 'mysql.railway.internal'  
+app.config['MYSQL_USER'] = 'root'  
+app.config['MYSQL_PASSWORD'] = 'dyCsJdcbUhHerxBTbpkIZBhYWeXXORGc'  
+app.config['MYSQL_DB'] = 'railway' 
 
 
 mysql = MySQL(app)
