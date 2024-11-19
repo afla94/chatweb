@@ -6,3 +6,8 @@ bcrypt==4.0.1
 eventlet==0.33.3
 gunicorn==20.1.0
 gevent
+
+app.config['MYSQL_HOST'] = os.getenv('DB_HOST', 'mysql.railway.internal')  
+app.config['MYSQL_USER'] = os.getenv('DB_USER', 'root')  
+app.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD', 'dyCsJdcbUhHerxBTbpkIZBhYWeXXORGc')  
+app.config['MYSQL_DB'] = os.getenv('DB_NAME', 'railway') 
