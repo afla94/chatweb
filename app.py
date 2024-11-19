@@ -499,4 +499,4 @@ if __name__ == '__main__':
     socketio = SocketIO(app, cors_allowed_origins="*", ping_timeout=10, ping_interval=5)
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
     port = int(os.environ.get('PORT', 5000))  # Obtén el puerto de las variables de entorno
-    socketio.run(app, host="0.0.0.0", port=port, debug=False)
+    socketio.run(app, host="0.0.0.0", port=port, debug=True)
