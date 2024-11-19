@@ -3,14 +3,15 @@ from flask_cors import CORS
 from flask_socketio import SocketIO, join_room, leave_room, send
 from flask_mysqldb import MySQL
 import bcrypt
+import os
 
 app = Flask(__name__)
 CORS(app)
-app.secret_key = 'your_secret_key'
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '123456'
-app.config['MYSQL_DB'] = 'chat_db'
+app.config['MYSQL_HOST'] = os.getenv('DB_HOST')  
+app.config['MYSQL_USER'] = os.getenv('DB_USER')  
+app.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD')  
+app.config['MYSQL_DB'] = os.getenv('DB_NAME')  
+
 
 mysql = MySQL(app)
 socketio = SocketIO(app, cors_allowed_origins="*", ping_timeout=10, ping_interval=5)
@@ -497,3 +498,5 @@ def get_messages():
 
 if __name__ == '__main__':
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Obtén el puerto de las variables de entorno
+    socketio.run(app, host="0.0.0.0", port=port, debug=False)
